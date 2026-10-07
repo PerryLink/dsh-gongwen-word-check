@@ -1,0 +1,21 @@
+{
+  "ruleId": "GW-006",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "GW-006-compliant.json",
+      "expect": {
+        "ruleId": "GW-006",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "GW-006-unsafe.json",
+      "expect": {
+        "ruleId": "GW-006",
+        "count": 1
+      }
+    }
+  ]
+}

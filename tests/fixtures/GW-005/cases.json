@@ -1,0 +1,26 @@
+{
+  "ruleId": "GW-005",
+  "configure": {
+    "GW-005": {
+      "maxLength": 60
+    }
+  },
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "GW-005-compliant.json",
+      "expect": {
+        "ruleId": "GW-005",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "GW-005-unsafe.json",
+      "expect": {
+        "ruleId": "GW-005",
+        "count": 1
+      }
+    }
+  ]
+}

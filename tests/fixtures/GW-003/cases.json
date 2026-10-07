@@ -1,0 +1,34 @@
+{
+  "ruleId": "GW-003",
+  "configure": {
+    "GW-003": {
+      "values": [
+        "通知",
+        "通报",
+        "报告",
+        "请示",
+        "批复",
+        "函",
+        "纪要"
+      ]
+    }
+  },
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "GW-003-compliant.json",
+      "expect": {
+        "ruleId": "GW-003",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "GW-003-unsafe.json",
+      "expect": {
+        "ruleId": "GW-003",
+        "count": 1
+      }
+    }
+  ]
+}
