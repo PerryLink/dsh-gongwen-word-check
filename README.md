@@ -1,4 +1,24 @@
-# dsh-gongwen-word-check
+# dsh-gongwen-word-check — Document register formatting-element check for official documents
+
+`dsh-gongwen-word-check` reads one document register — one row per issued document — and checks the text that register records against a versioned rule pack: whether `发文字号` follows the 「机关代字〔年份〕序号」 shape with the year in 六角括号〔〕, whether `成文日期` parses as a date and is not later than the day of the check, whether `文种` comes from the vocabulary your own unit configures, whether `主送机关` is filled in, whether `标题` stays within the configured length, whether a `发文字号` repeats anywhere in the register, and whether a title still holds an unreplaced template placeholder.
+
+## What it answers
+
+| You ask | What it answers |
+|---|---|
+| The document number was typed as `某政发[2026]15号`, with square brackets. | `GW-001` reports the row: the pattern it was configured with requires 六角括号〔〕 around the year, so `某政发〔2026〕15号` is the shape to write. The rule only checks the document number's form — the 机关代字 itself is set by your unit, so it does not judge whether the code is the right one, nor whether the serial numbers are consecutive or reused. |
+| The signing date is written the way a document usually carries it: 二〇二六年三月十五日. | `GW-002` reports that it cannot parse this value. It reads `2026-03-15` and `2026-03-15 09:30`; a 汉字 date has to be written in one of those forms, or the rule switched off. The rule also does not check the signing date against the dispatch date — that is internal to the issuing workflow. |
+| We never configured the list of 文种 for our unit. Does `GW-003` quietly pass? | No. `GW-003` carries no built-in list, so with `values` unset it appears in the report's `skipped` rather than passing silently. 《党政机关公文处理工作条例》 lists fifteen main kinds, but the pack does not hard-code them — which kinds your unit may use is your own decision. The rule also does not judge which kind a given document ought to have used. |
+| A row leaves 主送机关 blank. | `GW-004` reports that row, because without a main recipient there is nothing to confirm who the document was sent to. It checks that the column is filled in, not whether the recipient range is the right one — who is addressed and who is copied is a drafting decision. |
+| Our title is long. Where does the length limit come from? | `GW-005` reports a `标题` longer than the configured ceiling of 60 characters. That figure is this rule pack's default, not a standard number: GB/T 9704-2012 fixes 「2 号小标宋体字」 for the title and gives no character limit, so if your unit writes longer titles, raise `maxLength` or switch the rule off. The rule only counts characters — it does not judge the wording of the title. |
+| Two rows carry the same 发文字号. | `GW-006` reports the repeated number; it compares values ignoring whitespace, and a hit usually means a reused or mistyped number that a human has to confirm. It does not decide which of the two documents should hold that number. |
+
+## Standards it follows
+
+| Document | Number | Cited by rules |
+|---|---|---|
+| 《党政机关公文格式》 | GB/T 9704-2012（现行，本次未取得条文） | GW-001, GW-002, GW-004, GW-005, GW-007 |
+| 《党政机关公文处理工作条例》 | 中办发〔2012〕14号（自 2012 年 7 月 1 日起施行） | GW-003, GW-006 |
 
 **Boundary:** this plugin checks a **公文台账的版头与主体要素** for what a register can be held to
 mechanically — that the document number follows its 「机关代字〔年份〕序号」 shape, that the signing date

@@ -1,4 +1,24 @@
-# dsh-gongwen-word-check
+# dsh-gongwen-word-check — Verificación de los elementos de formato del registro de documentos oficiales
+
+`dsh-gongwen-word-check` lee un registro de documentos oficiales —una fila por documento emitido— y contrasta el texto que ese registro anota con un paquete de reglas versionado: si `发文字号` respeta la forma 「机关代字〔年份〕序号」 con el año entre corchetes hexagonales 〔〕, si `成文日期` se puede analizar como fecha y no es posterior al día de la comprobación, si `文种` procede del vocabulario que configura su propia unidad, si `主送机关` está rellenado, si `标题` se mantiene dentro de la longitud configurada, si un `发文字号` se repite en el registro y si un título conserva algún marcador de plantilla sin sustituir.
+
+## Qué responde
+
+| Usted pregunta | Qué responde |
+|---|---|
+| El número de documento se escribió `某政发[2026]15号`, con corchetes cuadrados. | `GW-001` señala esa fila: el patrón con el que se configuró exige corchetes hexagonales 〔〕 alrededor del año, de modo que la forma que corresponde escribir es `某政发〔2026〕15号`. La regla solo comprueba la forma del número — la sigla 机关代字 la fija su unidad, así que no juzga si la sigla es la correcta ni si los números de orden son consecutivos o se repiten. |
+| La fecha de firma está escrita como suele llevarla el documento: 二〇二六年三月十五日. | `GW-002` informa de que no puede analizar ese valor. Reconoce `2026-03-15` y `2026-03-15 09:30`; una fecha en caracteres chinos debe escribirse de una de esas dos maneras, o bien desactivar la regla. La regla tampoco contrasta la fecha de firma con la fecha de expedición: eso es interno al flujo de emisión. |
+| Nunca configuramos la lista de 文种 de nuestra unidad. ¿`GW-003` pasa en silencio? | No. `GW-003` no lleva ninguna lista incorporada, así que con `values` sin definir aparece en el apartado `skipped` del informe en lugar de pasar en silencio. 《党政机关公文处理工作条例》 enumera quince clases principales, pero el paquete no las fija en el código: qué clases puede usar su unidad es decisión suya. La regla tampoco juzga qué clase debería haber empleado un documento concreto. |
+| Una fila deja 主送机关 en blanco. | `GW-004` señala esa fila, porque sin destinatario principal no hay con qué confirmar a quién se envió el documento. Comprueba que la columna esté rellenada, no que el alcance de los destinatarios sea el adecuado: a quién se dirige y a quién se copia es una decisión de redacción. |
+| Nuestro título es largo. ¿De dónde sale el límite de longitud? | `GW-005` señala un `标题` que supera el límite configurado de 60 caracteres. Esa cifra es el valor por defecto de este paquete de reglas, no un número de la norma: GB/T 9704-2012 fija para el título 「2 号小标宋体字」 y no da ningún límite de caracteres, así que si su unidad redacta títulos más largos, aumente `maxLength` o desactive la regla. La regla solo cuenta caracteres: no juzga la redacción del título. |
+| Dos filas llevan el mismo 发文字号. | `GW-006` señala el número repetido; compara los valores ignorando los espacios y un acierto suele significar un número reutilizado o mal copiado que una persona debe confirmar. No decide cuál de los dos documentos debería llevar ese número. |
+
+## Normas que sigue
+
+| Documento | Número | Reglas que lo citan |
+|---|---|---|
+| 《党政机关公文格式》 | GB/T 9704-2012（现行，本次未取得条文） | GW-001, GW-002, GW-004, GW-005, GW-007 |
+| 《党政机关公文处理工作条例》 | 中办发〔2012〕14号（自 2012 年 7 月 1 日起施行） | GW-003, GW-006 |
 
 **Boundary:** this plugin checks a **公文台账的版头与主体要素** for what a register can be held to
 mechanically — that the document number follows its 「机关代字〔年份〕序号」 shape, that the signing date
