@@ -1,6 +1,6 @@
 {
   "name": "dsh-gongwen-word-check",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "公文格式要素核对（按公开的党政机关公文格式标准核对版头与主体要素，仅提示差异，不作出定性结论）",
   "type": "module",
   "main": "lib/index.mjs",
