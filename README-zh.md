@@ -49,8 +49,7 @@ judged from the document itself.
 ## Install
 
 ```sh
-pnpm pack
-dsh plugin --profile <name> add ./*.tgz
+dsh plugin --profile <name> add dsh-gongwen-word-check
 dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
 ```
 
