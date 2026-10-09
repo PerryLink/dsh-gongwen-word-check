@@ -1,6 +1,14 @@
 # dsh-gongwen-word-check — Verificação dos elementos de formato do registo de documentos oficiais
 
+[![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+
 `dsh-gongwen-word-check` lê um registo de documentos oficiais —uma linha por documento emitido— e confronta o texto que esse registo anota com um pacote de regras versionado: se `发文字号` segue a forma 「机关代字〔年份〕序号」 com o ano entre parênteses hexagonais 〔〕, se `成文日期` é analisável como data e não é posterior ao dia da verificação, se `文种` vem do vocabulário que a sua própria unidade configura, se `主送机关` está preenchido, se `标题` se mantém dentro do comprimento configurado, se um `发文字号` se repete no registo e se um título conserva algum marcador de modelo por substituir.
+
+## Como é a saída
+
+![Terminal demo of dsh-gongwen-word-check: real output over its GW-006 fixture](https://raw.githubusercontent.com/PerryLink/dsh-gongwen-word-check/main/docs/assets/dsh-gongwen-word-check-demo.png)
+
+Saída real deste plugin sobre o seu próprio fixture de teste `GW-006` — não é uma simulação. O pacote de regras não inventa citações, por isso cada achado nomeia a cláusula aplicada e avisa que o seu texto não foi obtido.
 
 ## O que ele responde
 

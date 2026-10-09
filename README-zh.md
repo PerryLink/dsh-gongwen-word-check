@@ -1,6 +1,14 @@
 # dsh-gongwen-word-check — 公文台账版头与主体要素核对
 
+[![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+
 `dsh-gongwen-word-check` 读取一份公文台账——每份已发出公文一行——按版本化的规则库核对这份台账登记的文字：`发文字号` 是否符合「机关代字〔年份〕序号」的形式、年份是否用六角括号〔〕括入，`成文日期` 是否可解析且不晚于核对日，`文种` 是否落在本机关自己配置的取值清单内，`主送机关` 是否填写，`标题` 是否在配置的长度上限内，`发文字号` 是否在台账内重复，以及标题里是否残留未替换的模板占位符。
+
+## 实际输出长什么样
+
+![Terminal demo of dsh-gongwen-word-check: real output over its GW-006 fixture](https://raw.githubusercontent.com/PerryLink/dsh-gongwen-word-check/main/docs/assets/dsh-gongwen-word-check-demo.png)
+
+本插件对自己 `GW-006` 测试夹具的**真实输出**，不是示意图。规则库不伪造引文，因此每条发现都会同时写明所引条款，以及该条款原文本次未取得。
 
 ## 它回答什么问题
 
