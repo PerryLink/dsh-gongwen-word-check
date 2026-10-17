@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.9] - 2026-10-18
+
+### Fixed
+
+- The rule-pack header said every `excerpt` was not a quotation, while the gate checks 3 verbatim segments and the file lists full-text verification; it now states the real rule.
+
 ## [0.2.8] - 2026-10-18
 
 ### Changed
