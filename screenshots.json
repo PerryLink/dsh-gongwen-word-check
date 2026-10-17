@@ -1,0 +1,14 @@
+[
+  {
+    "path": "docs/assets/dsh-gongwen-word-check-hero.png",
+    "kind": "hero",
+    "alt": "dsh-gongwen-word-check terminal output",
+    "caption": "Real dsh-gongwen-word-check checker output; 31 tests passed."
+  },
+  {
+    "path": "docs/assets/dsh-gongwen-word-check-demo.gif",
+    "kind": "demo",
+    "alt": "Animated dsh-gongwen-word-check terminal session",
+    "caption": "The same run, assembled line by line."
+  }
+]
