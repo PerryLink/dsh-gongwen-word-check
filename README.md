@@ -4,6 +4,13 @@
 
 `dsh-gongwen-word-check` reads one document register — one row per issued document — and checks the text that register records against a versioned rule pack: whether `发文字号` follows the 「机关代字〔年份〕序号」 shape with the year in 六角括号〔〕, whether `成文日期` parses as a date and is not later than the day of the check, whether `文种` comes from the vocabulary your own unit configures, whether `主送机关` is filled in, whether `标题` stays within the configured length, whether a `发文字号` repeats anywhere in the register, and whether a title still holds an unreplaced template placeholder.
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-gongwen-word-check
+dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
+```
+
 ## What it looks like
 
 ![Terminal demo of dsh-gongwen-word-check: real output over its GW-006 fixture](https://raw.githubusercontent.com/PerryLink/dsh-gongwen-word-check/main/docs/assets/dsh-gongwen-word-check-hero.png)
@@ -86,13 +93,6 @@ a versioned rule pack, and returns a report.
 | `GW-005` | the title is not over the configured length | warn | principle |
 | `GW-006` | document numbers are unique in the register | warn | principle |
 | `GW-007` | the title holds no unreplaced placeholder | warn | principle |
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-gongwen-word-check
-dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
-```
 
 ## Configuration
 

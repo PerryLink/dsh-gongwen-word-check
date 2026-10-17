@@ -4,6 +4,13 @@
 
 `dsh-gongwen-word-check` 读取一份公文台账——每份已发出公文一行——按版本化的规则库核对这份台账登记的文字：`发文字号` 是否符合「机关代字〔年份〕序号」的形式、年份是否用六角括号〔〕括入，`成文日期` 是否可解析且不晚于核对日，`文种` 是否落在本机关自己配置的取值清单内，`主送机关` 是否填写，`标题` 是否在配置的长度上限内，`发文字号` 是否在台账内重复，以及标题里是否残留未替换的模板占位符。
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-gongwen-word-check
+dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
+```
+
 ## 实际输出长什么样
 
 ![Terminal demo of dsh-gongwen-word-check: real output over its GW-006 fixture](https://raw.githubusercontent.com/PerryLink/dsh-gongwen-word-check/main/docs/assets/dsh-gongwen-word-check-hero.png)
@@ -75,13 +82,6 @@ judged from the document itself.
 ## What it does
 
 规则表、字段说明与行为细节见 [README.md](README.md#what-it-does)（英文主版本）。本插件只列出材料与所引条款之间的字面差异，并对无法执行的检查在 `skipped` 中逐项说明。
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-gongwen-word-check
-dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
-```
 
 ## Configuration
 

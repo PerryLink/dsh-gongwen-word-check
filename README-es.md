@@ -4,6 +4,13 @@
 
 `dsh-gongwen-word-check` lee un registro de documentos oficiales —una fila por documento emitido— y contrasta el texto que ese registro anota con un paquete de reglas versionado: si `发文字号` respeta la forma 「机关代字〔年份〕序号」 con el año entre corchetes hexagonales 〔〕, si `成文日期` se puede analizar como fecha y no es posterior al día de la comprobación, si `文种` procede del vocabulario que configura su propia unidad, si `主送机关` está rellenado, si `标题` se mantiene dentro de la longitud configurada, si un `发文字号` se repite en el registro y si un título conserva algún marcador de plantilla sin sustituir.
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-gongwen-word-check
+dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
+```
+
 ## Cómo se ve la salida
 
 ![Terminal demo of dsh-gongwen-word-check: real output over its GW-006 fixture](https://raw.githubusercontent.com/PerryLink/dsh-gongwen-word-check/main/docs/assets/dsh-gongwen-word-check-hero.png)
@@ -75,13 +82,6 @@ judged from the document itself.
 ## What it does
 
 La tabla de reglas, los campos y el comportamiento detallado están en [README.md](README.md#what-it-does) (versión principal en inglés). El plugin sólo enumera divergencias literales frente a las cláusulas citadas e indica en `skipped` cada comprobación que no pudo ejecutarse.
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-gongwen-word-check
-dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
-```
 
 ## Configuration
 

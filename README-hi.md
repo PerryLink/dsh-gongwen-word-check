@@ -4,6 +4,13 @@
 
 `dsh-gongwen-word-check` एक सरकारी दस्तावेज़ रजिस्टर पढ़ता है — जारी किए गए प्रत्येक दस्तावेज़ की एक पंक्ति — और उस रजिस्टर में दर्ज पाठ की तुलना एक संस्करणबद्ध नियम-पैक से करता है: क्या `发文字号` «机关代字〔年份〕序号» के रूप में है और वर्ष षट्कोणीय कोष्ठक 〔〕 में है, क्या `成文日期` दिनांक के रूप में पढ़ी जा सकती है और जाँच के दिन से बाद की नहीं है, क्या `文种` आपकी अपनी इकाई द्वारा कॉन्फ़िगर की गई सूची से आता है, क्या `主送机关` भरा है, क्या `标题` कॉन्फ़िगर की गई लंबाई के भीतर है, क्या रजिस्टर में कोई `发文字号` दोहराया गया है, और क्या किसी शीर्षक में टेम्पलेट प्लेसहोल्डर शेष है।
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-gongwen-word-check
+dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
+```
+
 ## आउटपुट कैसा दिखता है
 
 ![Terminal demo of dsh-gongwen-word-check: real output over its GW-006 fixture](https://raw.githubusercontent.com/PerryLink/dsh-gongwen-word-check/main/docs/assets/dsh-gongwen-word-check-hero.png)
@@ -75,13 +82,6 @@ judged from the document itself.
 ## What it does
 
 नियम-सूची, फ़ील्ड और विस्तृत व्यवहार [README.md](README.md#what-it-does) (अंग्रेज़ी मुख्य संस्करण) में हैं। यह प्लगइन केवल उद्धृत धाराओं के सामने शाब्दिक अंतर सूचीबद्ध करता है और हर न चल पाई जाँच को `skipped` में बताता है।
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-gongwen-word-check
-dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
-```
 
 ## Configuration
 
