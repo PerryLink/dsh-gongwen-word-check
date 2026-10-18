@@ -41,31 +41,17 @@ dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
 
 **边界（中文译文，以英文原文为准）：** 本插件核对一份**公文台账的版头与主体要素**，范围限于登记表可以机械判定的事项——发文字号是否符合「机关代字〔年份〕序号」的形态，签发日期是否可解析，公文种类是否取自你的取值口径，是否记录了主送机关，标题是否不过长，编号是否不重复，以及是否残留模板占位符。它核对的是**登记表所记录的文本，而不是版式**——字体、字号、页边距与印章位置只能就公文本身判断。
 
-> ### ⚠️ What the citations in this plugin's report actually rest on
+> ### ⚠️ 本插件报告中的引文究竟以什么为依据（以英文原文为准）
 >
-> **《党政机关公文处理工作条例》(中办发〔2012〕14号) was obtained and read verbatim**, and
-> `rules/evidence/clause-verification.md` records which articles were quoted — article 8 (the fifteen document
-> kinds), article 9 (the format elements, including 「发文字号。由发文机关代字、年份、发文顺序号组成」 and
-> 「主送机关。公文的主要受理机关」), article 10 (which delegates layout to GB/T 9704-2012) and article 42
-> (in force from 2012-07-01, superseding two earlier documents this pack therefore never cites).
+> **《党政机关公文处理工作条例》（中办发〔2012〕14号）已经取得并逐字阅读**，`rules/evidence/clause-verification.md` 记录了所引的条款——第八条（十五种公文种类）、第九条（格式要素，包括「发文字号。由发文机关代字、年份、发文顺序号组成」和「主送机关。公文的主要受理机关」）、第十条（把版式交由 GB/T 9704-2012 规定）和第四十二条（自 2012-07-01 起施行，取代此前两份文件，因此本规则库从不引用那两份文件）。
 >
-> **GB/T 9704-2012 itself was not obtained.** That matters for one detail worth stating plainly: **the
-> 六角括号〔〕 in `GW-001`'s pattern is the layout standard's convention, not something the regulation
-> fixes** — article 9(5) requires only 「发文机关代字、年份、发文顺序号」.
+> **GB/T 9704-2012 本身本次未取得。** 这对一个值得直说的细节有影响：**`GW-001` 模式中的六角括号〔〕是版式标准的约定，而不是条例所规定的东西**——第九条第（五）项只要求「发文机关代字、年份、发文顺序号」。
 >
-> **The rule `excerpt` fields still say "本次未取得", and every rule remains `warn` or `info`.** What this
-> plugin checks is what a *register of text* says; the regulation governs the *document*, so calling a blank
-> column a `direct` breach of "a document shall consist of …" would overstate the finding. Half the rules rest
-> on the layout standard or on your own convention in any case.
+> **各规则的 `excerpt` 字段仍写着“本次未取得”，每条规则也仍然是 `warn` 或 `info`。** 本插件核对的是*文本台账*所写的内容；条例规范的是*公文*本身，因此把空栏称为对“公文应当由……组成”的 `direct` 违反，会夸大这一发现。况且有一半规则本来就依据版式标准或你自己的约定。
 >
-> Two thresholds are local, and the pack says so. The title-length ceiling (`GW-005`, 60 characters) is
-> **this rule pack's default, not a standard figure** — article 9(7) fixes only that the title consists of the
-> issuing body, the subject and the kind, and **no character count appears in either document**. And the
-> document-kind vocabulary (`GW-003`) ships **empty** despite article 8 listing fifteen kinds, because the
-> article says "主要有" and units also use names outside the list.
+> 有两个阈值是本地设定，规则库也这样写明。标题长度上限（`GW-005`，60 个字符）是**本规则库的默认值，不是标准数字**——第九条第（七）项只规定标题由发文机关、事由和文种构成，**两份文件中都没有出现任何字数**。而公文种类词表（`GW-003`）出厂为**空**，尽管第八条列出了十五种，因为该条说的是“主要有”，各单位也会使用清单之外的名称。
 >
-> The placeholder check deliberately **omits 「某」** from its term list: template titles often read
-> "关于某某工作的通知", but 某 also appears in legitimate titles as a stand-in for a confidential subject.
+> 占位符检查有意**把「某」排除**在词表之外：模板标题常写作“关于某某工作的通知”，但“某”也会出现在正当标题中，用来代替涉密事由。
 
 ## Compatibility
 
