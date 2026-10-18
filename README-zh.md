@@ -39,12 +39,7 @@ dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
 | 《党政机关公文格式》 | GB/T 9704-2012（现行，本次未取得条文） | GW-001, GW-002, GW-004, GW-005, GW-007 |
 | 《党政机关公文处理工作条例》 | 中办发〔2012〕14号（自 2012 年 7 月 1 日起施行） | GW-003, GW-006 |
 
-**Boundary:** this plugin checks a **公文台账的版头与主体要素** for what a register can be held to
-mechanically — that the document number follows its 「机关代字〔年份〕序号」 shape, that the signing date
-parses, that the document kind comes from your vocabulary, that a main recipient is recorded, that the
-title is not over-long, that numbers do not repeat, and that no template placeholder survives. It checks
-**the text a register records, not the layout** — typeface, size, margins and seal placement can only be
-judged from the document itself.
+**边界（中文译文，以英文原文为准）：** 本插件核对一份**公文台账的版头与主体要素**，范围限于登记表可以机械判定的事项——发文字号是否符合「机关代字〔年份〕序号」的形态，签发日期是否可解析，公文种类是否取自你的取值口径，是否记录了主送机关，标题是否不过长，编号是否不重复，以及是否残留模板占位符。它核对的是**登记表所记录的文本，而不是版式**——字体、字号、页边距与印章位置只能就公文本身判断。
 
 > ### ⚠️ What the citations in this plugin's report actually rest on
 >
