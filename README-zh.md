@@ -30,6 +30,35 @@ dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
 下表是示例集：第一行是详细走查，其余行是简短案例。
 
 
+#### 详细输出
+
+**工具** `gongwen_word_check`
+
+**输入**
+
+~~~json
+{"rows":[{"发文字号":"某政发〔2026〕15号","成文日期":"二〇二六年三月十日"}]}
+~~~
+ 
+**输出**
+
+~~~json
+{
+  "id": "dsh-gongwen-word-check.GW-002.de09b5a6",
+  "ruleId": "GW-002",
+  "severity": "warn",
+  "locator": {
+    "field": "signedAt",
+    "row": 1
+  },
+  "found": "第 1 行「signedAt」的值「二〇二六年三月十日」无法解析为日期",
+  "expected": "「signedAt」应为 2026-03-15 或 2026-03-15 09:30 这样的可解析日期",
+  "fix": "核对日期写法；本条不会因为无法解析而跳过该行"
+}
+~~~
+
+*来源 `tests/fixtures/GW-002/GW-002-unsafe.json (cases.json expects GW-002 count 1); run via lib/index.mjs rules/gongwen-word-check.yaml`*
+
 | 你会问 | 它怎么答 |
 |---|---|
 | 发文字号写成了 `某政发[2026]15号`，用的是方括号。 | `GW-001` 会报出该行：本条配置的 pattern 要求年份用六角括号〔〕括入，应写成 `某政发〔2026〕15号`。本条**只核对发文字号的形式**——机关代字由各机关自行规定，它不判断代字是否正确，也不判断序号是否连续或是否重号。 |

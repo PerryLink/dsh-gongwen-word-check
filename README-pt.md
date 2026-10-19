@@ -30,6 +30,35 @@ Saída real deste plugin sobre o seu próprio fixture de teste `GW-006` — não
 A tabela abaixo é o conjunto de exemplos: a primeira linha é o caso detalhado e as demais são casos curtos.
 
 
+#### Saída detalhada
+
+**Ferramenta** `gongwen_word_check`
+
+**Entrada**
+
+~~~json
+{"rows":[{"发文字号":"某政发〔2026〕15号","成文日期":"二〇二六年三月十日"}]}
+~~~
+ 
+**Saída**
+
+~~~json
+{
+  "id": "dsh-gongwen-word-check.GW-002.de09b5a6",
+  "ruleId": "GW-002",
+  "severity": "warn",
+  "locator": {
+    "field": "signedAt",
+    "row": 1
+  },
+  "found": "第 1 行「signedAt」的值「二〇二六年三月十日」无法解析为日期",
+  "expected": "「signedAt」应为 2026-03-15 或 2026-03-15 09:30 这样的可解析日期",
+  "fix": "核对日期写法；本条不会因为无法解析而跳过该行"
+}
+~~~
+
+*Observado em `tests/fixtures/GW-002/GW-002-unsafe.json (cases.json expects GW-002 count 1); run via lib/index.mjs rules/gongwen-word-check.yaml`*
+
 | Você pergunta | O que ele responde |
 |---|---|
 | O número do documento foi escrito `某政发[2026]15号`, com parênteses retos. | `GW-001` assinala essa linha: o padrão com que foi configurada exige parênteses hexagonais 〔〕 em torno do ano, portanto a forma a escrever é `某政发〔2026〕15号`. A regra verifica apenas a forma do número — a sigla 机关代字 é fixada pela sua unidade, pelo que não julga se a sigla é a correta nem se os números de ordem são consecutivos ou repetidos. |

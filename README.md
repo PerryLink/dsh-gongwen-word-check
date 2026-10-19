@@ -28,6 +28,35 @@ dsh --profile <name> --dump-config | grep 'dsh-gongwen-word-check'
 
 The table below is the example set: the first row is the detailed walkthrough, the remaining rows are short cases.
 
+#### Detailed output
+
+**Tool** `gongwen_word_check`
+
+**Input**
+
+~~~json
+{"rows":[{"发文字号":"某政发〔2026〕15号","成文日期":"二〇二六年三月十日"}]}
+~~~
+ 
+**Output**
+
+~~~json
+{
+  "id": "dsh-gongwen-word-check.GW-002.de09b5a6",
+  "ruleId": "GW-002",
+  "severity": "warn",
+  "locator": {
+    "field": "signedAt",
+    "row": 1
+  },
+  "found": "第 1 行「signedAt」的值「二〇二六年三月十日」无法解析为日期",
+  "expected": "「signedAt」应为 2026-03-15 或 2026-03-15 09:30 这样的可解析日期",
+  "fix": "核对日期写法；本条不会因为无法解析而跳过该行"
+}
+~~~
+
+*Observed from `tests/fixtures/GW-002/GW-002-unsafe.json (cases.json expects GW-002 count 1); run via lib/index.mjs rules/gongwen-word-check.yaml`*
+
 | You ask | What it answers |
 |---|---|
 | The document number was typed as `某政发[2026]15号`, with square brackets. | `GW-001` reports the row: the pattern it was configured with requires 六角括号〔〕 around the year, so `某政发〔2026〕15号` is the shape to write. The rule only checks the document number's form — the 机关代字 itself is set by your unit, so it does not judge whether the code is the right one, nor whether the serial numbers are consecutive or reused. |

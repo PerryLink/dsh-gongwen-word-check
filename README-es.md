@@ -30,6 +30,35 @@ Salida real de este plugin sobre su propio fixture de prueba `GW-006` — no es 
 La tabla siguiente es el conjunto de ejemplos: la primera fila es el caso detallado y las demás son casos breves.
 
 
+#### Salida detallada
+
+**Herramienta** `gongwen_word_check`
+
+**Entrada**
+
+~~~json
+{"rows":[{"发文字号":"某政发〔2026〕15号","成文日期":"二〇二六年三月十日"}]}
+~~~
+ 
+**Salida**
+
+~~~json
+{
+  "id": "dsh-gongwen-word-check.GW-002.de09b5a6",
+  "ruleId": "GW-002",
+  "severity": "warn",
+  "locator": {
+    "field": "signedAt",
+    "row": 1
+  },
+  "found": "第 1 行「signedAt」的值「二〇二六年三月十日」无法解析为日期",
+  "expected": "「signedAt」应为 2026-03-15 或 2026-03-15 09:30 这样的可解析日期",
+  "fix": "核对日期写法；本条不会因为无法解析而跳过该行"
+}
+~~~
+
+*Observado en `tests/fixtures/GW-002/GW-002-unsafe.json (cases.json expects GW-002 count 1); run via lib/index.mjs rules/gongwen-word-check.yaml`*
+
 | Usted pregunta | Qué responde |
 |---|---|
 | El número de documento se escribió `某政发[2026]15号`, con corchetes cuadrados. | `GW-001` señala esa fila: el patrón con el que se configuró exige corchetes hexagonales 〔〕 alrededor del año, de modo que la forma que corresponde escribir es `某政发〔2026〕15号`. La regla solo comprueba la forma del número — la sigla 机关代字 la fija su unidad, así que no juzga si la sigla es la correcta ni si los números de orden son consecutivos o se repiten. |
