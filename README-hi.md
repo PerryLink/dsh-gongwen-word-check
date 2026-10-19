@@ -3,6 +3,7 @@
 [English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
 
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-gongwen-word-check?metric=downloads)](https://dshfind.com/en/plugins/PerryLink/dsh-gongwen-word-check?ref=badge)
 
 `dsh-gongwen-word-check` एक सरकारी दस्तावेज़ रजिस्टर पढ़ता है — जारी किए गए प्रत्येक दस्तावेज़ की एक पंक्ति — और उस रजिस्टर में दर्ज पाठ की तुलना एक संस्करणबद्ध नियम-पैक से करता है: क्या `发文字号` «机关代字〔年份〕序号» के रूप में है और वर्ष षट्कोणीय कोष्ठक 〔〕 में है, क्या `成文日期` दिनांक के रूप में पढ़ी जा सकती है और जाँच के दिन से बाद की नहीं है, क्या `文种` आपकी अपनी इकाई द्वारा कॉन्फ़िगर की गई सूची से आता है, क्या `主送机关` भरा है, क्या `标题` कॉन्फ़िगर की गई लंबाई के भीतर है, क्या रजिस्टर में कोई `发文字号` दोहराया गया है, और क्या किसी शीर्षक में टेम्पलेट प्लेसहोल्डर शेष है।
 
