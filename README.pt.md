@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-flow-dark.svg">
-  <img src="docs/assets/dsh-gongwen-word-check-flow-light.svg" width="100%" alt="Fluxo de dados do dsh-gongwen-word-check: rows[] registro de documentos → ferramenta gongwen_word_check → pacote de regras rules/*.yaml (GW-001..GW-007) → relatório issues[] + skipped[] → veredito do revisor; chaves de configuração rulesFile, disabledRules, onlyRules, skipNotes, timeoutMs">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-gongwen-word-check-hero-en-light.webp" width="100%" alt="Banner do dsh-gongwen-word-check: à esquerda, o nome do plugin e seu valor; à direita, o número do documento dividido em sigla do órgão / ano entre colchetes hexagonais / número de ordem, as duas formas que as regras reportam, uma execução de exemplo com 0 error / 1 warn / 0 info e uma regra ignorada, e os limites de gravidade por tipo de evidência">
 </picture>
 
 # dsh-gongwen-word-check
@@ -54,6 +54,11 @@ coluna do registro   chave      o que a verificação pergunta
 - **Para quem é**: para quem redige documentos oficiais, para a secretaria e para quem revisa em um órgão emissor; não é preciso linha de comando — basta entregar o material no chat.
 - **O que você entrega**: o material de origem sobre o qual a verificação trabalha (uma tabela, um registro ou um documento); o original nunca é modificado. O Excel pode ser convertido antes para JSON/YAML, inclusive no chat se a plataforma permitir.
 - **O que você recebe de volta**: uma lista de «qual linha, qual coluna, o que falta, como corrigir»; cada verificação que não pôde ser executada aparece em `skipped` com o motivo.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-gongwen-word-check-flow-v5-light.svg" width="100%" alt="Estrutura do dsh-gongwen-word-check: uma fronteira vertical de escopo. À esquerda, os cinco campos que o registro expõe (docNo, signedAt, docKind, recipient, title) e as sete regras montadas neles; a lista de valores de docKind vem vazia de fábrica, então GW-003 se declara em skipped. À direita, tipografia, corpo, margens e selo: visíveis apenas no documento, ficam fora da verificação. Abaixo, o relatório: um warn na linha 1 / coluna docNo e uma regra ignorada; uma lista de issues vazia não significa tudo certo">
+</picture>
 
 ## Instalação em três passos
 
@@ -384,7 +389,7 @@ node samples/quickstart/run.mjs --json
 # => {"tool":"gongwen_word_check","issueCount":1,"summary":{"error":0,"warn":1,"info":0},"skippedCount":1}
 ```
 
-A entrada do exemplo fica em `samples/quickstart/input/`, a saída esperada em `samples/quickstart/expected/result.json` e uma captura em `docs/assets/quickstart.png`. As imagens do README são geradas por [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) de forma programática (Python + Pillow) e podem ser reexecutadas: `python scripts/gen-readme-assets.py`; o diagrama de fluxo de pele única e as imagens de demonstração anteriores permanecem em `docs/assets/` para links externos, enquanto os READMEs citam apenas o novo par claro/escuro.
+A entrada do exemplo fica em `samples/quickstart/input/`, a saída esperada em `samples/quickstart/expected/result.json` e uma captura em `docs/assets/quickstart.png`. As imagens do README são geradas por [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) de forma programática (o banner com Python + Pillow e a figura de estrutura como SVG escrito à mão) e podem ser reexecutadas: `python scripts/gen-readme-assets.py`; o diagrama de fluxo de pele única e as imagens de demonstração anteriores permanecem em `docs/assets/` para links externos, enquanto os READMEs citam o novo banner e o par claro/escuro da estrutura.
 
 Tópicos: `deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `gongwen`, `word`
 

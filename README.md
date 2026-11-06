@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-flow-dark.svg">
-  <img src="docs/assets/dsh-gongwen-word-check-flow-light.svg" width="100%" alt="dsh-gongwen-word-check 数据流：rows[] 公文台账 → gongwen_word_check 工具 → rules/*.yaml 规则包（GW-001..GW-007）→ issues[] + skipped[] 报告 → 审核人裁决；配置键 rulesFile、disabledRules、onlyRules、skipNotes、timeoutMs">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-hero-zh-dark.webp">
+  <img src="docs/assets/dsh-gongwen-word-check-hero-zh-light.webp" width="100%" alt="dsh-gongwen-word-check 横幅：左侧是插件名与价值说明；右侧是发文字号的机关代字、〔年份〕、序号三段拆解，方括号与汉字日期两处会被报出的写法，一次样例运行的 0 error / 1 warn / 0 info 与 1 条 skipped，以及依据类别对严重级的封顶">
 </picture>
 
 # dsh-gongwen-word-check
@@ -43,6 +43,11 @@ dsh plugin --profile <name> add dsh-gongwen-word-check
 - **给谁用**：文秘、公文起草人、办公室核稿人；不用懂命令行，在对话里把材料交给它即可。
 - **你交什么**：这项核对用到的原始材料（表格、清单或文书）；不改原件。Excel 可先转成 JSON/YAML，对话里也能代转。
 - **它交什么**：一份「哪一行、哪一栏、差什么、怎么补」的清单；没能执行的检查逐条列入 `skipped` 并写明原因。
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-gongwen-word-check-flow-v5-light.svg" width="100%" alt="dsh-gongwen-word-check 结构图：一条竖向核对边界。左侧为台账可判的五栏（docNo 发文字号、signedAt 成文日期、docKind 文种、recipient 主送机关、title 标题）与挂在栏上的七条规则，docKind 的取值清单出厂为空，故 GW-003 进 skipped；右侧为只能就公文正本判断的字体、字号、页边距、印章，均不在核对范围；底部为报告：第 1 行 docNo 的一条 warn 与一条 skipped，空 issues 不等于通过">
+</picture>
 
 ## 三步上手
 
@@ -365,7 +370,7 @@ node samples/quickstart/run.mjs --json
 # => {"tool":"gongwen_word_check","issueCount":1,"summary":{"error":0,"warn":1,"info":0},"skippedCount":1}
 ```
 
-样例输入在 `samples/quickstart/input/`，期望输出在 `samples/quickstart/expected/result.json`，截图见 `docs/assets/quickstart.png`。README 配图由 [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) 程序化生成（Python + Pillow），可重复执行：`python scripts/gen-readme-assets.py`；旧的单版流程图与演示图保留在 `docs/assets/` 供外链使用，README 只引用新生成的深浅双版。
+样例输入在 `samples/quickstart/input/`，期望输出在 `samples/quickstart/expected/result.json`，截图见 `docs/assets/quickstart.png`。README 配图由 [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) 程序化生成（hero 用 Python + Pillow，结构图为手写 SVG），可重复执行：`python scripts/gen-readme-assets.py`；旧的单版流程图与演示图保留在 `docs/assets/` 供外链使用，README 引用新生成的 hero 与深浅双版结构图。
 
 Topics：`deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `gongwen`, `word`
 

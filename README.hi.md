@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-flow-dark.svg">
-  <img src="docs/assets/dsh-gongwen-word-check-flow-light.svg" width="100%" alt="dsh-gongwen-word-check का डेटा प्रवाह: rows[] दस्तावेज़ रजिस्टर → gongwen_word_check टूल → rules/*.yaml नियम पैक (GW-001..GW-007) → issues[] + skipped[] रिपोर्ट → समीक्षक का निर्णय; कॉन्फ़िगरेशन कुंजियाँ rulesFile, disabledRules, onlyRules, skipNotes, timeoutMs">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-gongwen-word-check-hero-en-light.webp" width="100%" alt="dsh-gongwen-word-check बैनर: बाएँ ओर प्लगइन का नाम और उसका मूल्य; दाएँ ओर दस्तावेज़ संख्या का विभाजन — प्राधिकरण कोड / षट्कोणीय कोष्ठक में वर्ष / क्रम संख्या, नियमों द्वारा सूचित दो रूप, 0 error / 1 warn / 0 info वाला एक नमूना रन और एक skipped नियम, तथा साक्ष्य-प्रकार के अनुसार गंभीरता की सीमाएँ">
 </picture>
 
 # dsh-gongwen-word-check
@@ -54,6 +54,11 @@ dsh plugin --profile <name> add dsh-gongwen-word-check
 - **किसके लिए है**: दस्तावेज़ लिखने वालों, सचिवालय कर्मियों और जारीकर्ता कार्यालय के समीक्षकों के लिए; कमांड लाइन की ज़रूरत नहीं — सामग्री चैट में सौंप दीजिए।
 - **आप क्या देते हैं**: वह मूल सामग्री जिस पर जाँच काम करती है (एक तालिका, रजिस्टर या दस्तावेज़); मूल कभी बदला नहीं जाता। Excel को पहले JSON/YAML में बदला जा सकता है, चैट में भी यदि प्लेटफ़ॉर्म अनुमति दे।
 - **आपको क्या मिलता है**: «कौन-सी पंक्ति, कौन-सा स्तंभ, क्या कम है, कैसे सुधारें» की सूची; जो जाँच नहीं चल सकी वह `skipped` में कारण के साथ दर्ज होती है।
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-gongwen-word-check-flow-v5-light.svg" width="100%" alt="dsh-gongwen-word-check संरचना: एक ऊर्ध्वाधर दायरा-सीमा। बाईं ओर रजिस्टर के पाँच फ़ील्ड (docNo, signedAt, docKind, recipient, title) और उन पर लगे सात नियम; docKind की मान-सूची फ़ैक्टरी में खाली है, इसलिए GW-003 skipped में स्वयं को दर्ज करता है। दाईं ओर टाइपफ़ेस, आकार, हाशिये और मुहर — जो केवल मूल दस्तावेज़ पर दिखते हैं, अतः जाँच से बाहर। नीचे रिपोर्ट: पंक्ति 1 / कॉलम docNo पर एक warn और एक skipped नियम; खाली issues का अर्थ 'सब ठीक' नहीं है">
+</picture>
 
 ## तीन चरणों में शुरुआत
 
@@ -381,7 +386,7 @@ node samples/quickstart/run.mjs --json
 # => {"tool":"gongwen_word_check","issueCount":1,"summary":{"error":0,"warn":1,"info":0},"skippedCount":1}
 ```
 
-नमूना इनपुट `samples/quickstart/input/` में, अपेक्षित आउटपुट `samples/quickstart/expected/result.json` में और स्क्रीनशॉट `docs/assets/quickstart.png` में है। README की छवियाँ [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) कार्यक्रम-रूप से बनाता है (Python + Pillow) और उसे दोबारा चलाया जा सकता है: `python scripts/gen-readme-assets.py`; पुराना एकल-रूप प्रवाह चित्र और डेमो छवियाँ बाहरी लिंक के लिए `docs/assets/` में बनी रहती हैं, जबकि README केवल नए हल्के/गहरे युग्म का संदर्भ देते हैं।
+नमूना इनपुट `samples/quickstart/input/` में, अपेक्षित आउटपुट `samples/quickstart/expected/result.json` में और स्क्रीनशॉट `docs/assets/quickstart.png` में है। README की छवियाँ [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) कार्यक्रम-रूप से बनाता है (बैनर Python + Pillow से और संरचना चित्र हस्तलिखित SVG के रूप में) और उसे दोबारा चलाया जा सकता है: `python scripts/gen-readme-assets.py`; पुराना एकल-रूप प्रवाह चित्र और डेमो छवियाँ बाहरी लिंक के लिए `docs/assets/` में बनी रहती हैं, जबकि README नए बैनर और संरचना के हल्के/गहरे युग्म का संदर्भ देते हैं।
 
 विषय: `deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `gongwen`, `word`
 

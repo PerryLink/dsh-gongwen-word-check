@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-flow-dark.svg">
-  <img src="docs/assets/dsh-gongwen-word-check-flow-light.svg" width="100%" alt="Flujo de datos de dsh-gongwen-word-check: rows[] registro de documentos → herramienta gongwen_word_check → paquete de reglas rules/*.yaml (GW-001..GW-007) → informe issues[] + skipped[] → veredicto del revisor; claves de configuración rulesFile, disabledRules, onlyRules, skipNotes, timeoutMs">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-gongwen-word-check-hero-en-light.webp" width="100%" alt="Banner de dsh-gongwen-word-check: a la izquierda, el nombre del complemento y su valor; a la derecha, el número de documento dividido en sigla del organismo / año entre corchetes hexagonales / número de orden, las dos formas que las reglas notifican, una ejecución de muestra con 0 error / 1 warn / 0 info y una regla omitida, y los topes de gravedad según el tipo de evidencia">
 </picture>
 
 # dsh-gongwen-word-check
@@ -54,6 +54,11 @@ columna del registro   clave     qué pregunta la comprobación
 - **Para quién es**: para quien redacta documentos oficiales, para la secretaría y para quien revisa en una oficina emisora; no hace falta la línea de comandos, basta con entregar el material en el chat.
 - **Qué le entrega**: el material de origen sobre el que trabaja la comprobación (una tabla, un registro o un documento); el original nunca se modifica. Excel puede convertirse antes a JSON/YAML, también en el chat si la plataforma lo permite.
 - **Qué recibe de vuelta**: una lista de «qué fila, qué columna, qué falta, cómo subsanarlo»; cada comprobación que no pudo ejecutarse aparece en `skipped` con su motivo.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-gongwen-word-check-flow-v5-light.svg" width="100%" alt="Estructura de dsh-gongwen-word-check: una frontera vertical de alcance. A la izquierda, los cinco campos que expone el registro (docNo, signedAt, docKind, recipient, title) y las siete reglas montadas sobre ellos; la lista de valores de docKind viene vacía de fábrica, por lo que GW-003 se declara en skipped. A la derecha, tipografía, cuerpo, márgenes y sello: solo visibles en el documento, quedan fuera de la comprobación. Abajo, el informe: un warn en la fila 1 / columna docNo y una regla omitida; una lista de incidencias vacía no significa que todo esté correcto">
+</picture>
 
 ## Instalación en tres pasos
 
@@ -384,7 +389,7 @@ node samples/quickstart/run.mjs --json
 # => {"tool":"gongwen_word_check","issueCount":1,"summary":{"error":0,"warn":1,"info":0},"skippedCount":1}
 ```
 
-La entrada del ejemplo está en `samples/quickstart/input/`, la salida esperada en `samples/quickstart/expected/result.json` y una captura en `docs/assets/quickstart.png`. Las imágenes del README las genera [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) de forma programática (Python + Pillow) y se puede volver a ejecutar: `python scripts/gen-readme-assets.py`; el diagrama de flujo de una sola piel y las imágenes de demostración anteriores se conservan en `docs/assets/` para enlaces externos, mientras que los README solo citan el nuevo par claro/oscuro.
+La entrada del ejemplo está en `samples/quickstart/input/`, la salida esperada en `samples/quickstart/expected/result.json` y una captura en `docs/assets/quickstart.png`. Las imágenes del README las genera [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) de forma programática (el banner con Python + Pillow y la figura de estructura como SVG escrito a mano) y se puede volver a ejecutar: `python scripts/gen-readme-assets.py`; el diagrama de flujo de una sola piel y las imágenes de demostración anteriores se conservan en `docs/assets/` para enlaces externos, mientras que los README citan el nuevo banner y el par claro/oscuro de la estructura.
 
 Temas: `deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `gongwen`, `word`
 

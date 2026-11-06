@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-flow-dark.svg">
-  <img src="docs/assets/dsh-gongwen-word-check-flow-light.svg" width="100%" alt="dsh-gongwen-word-check data flow: rows[] document register → gongwen_word_check tool → rules/*.yaml rule pack (GW-001..GW-007) → issues[] + skipped[] report → reviewer verdict; config keys rulesFile, disabledRules, onlyRules, skipNotes, timeoutMs">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-gongwen-word-check-hero-en-light.webp" width="100%" alt="dsh-gongwen-word-check banner: left, the plugin name and its value; right, the document number split into issuer code / year in hexagonal brackets / serial, the two forms the rules report, one sample run with 0 error / 1 warn / 0 info and one skipped rule, and the evidence-kind severity caps">
 </picture>
 
 # dsh-gongwen-word-check
@@ -54,6 +54,11 @@ register column   field key   what the check asks
 - **Who it is for**: document drafters, secretariat staff and reviewers of an issuing office; no command line required — hand the material over in chat.
 - **What you give it**: the source material the check works on (a table, register or document); the original is never modified. Excel can be converted to JSON/YAML first, in chat if the platform supports it.
 - **What you get back**: a list of "which row, which column, what is missing, how to fix it"; every check that could not run is listed in `skipped` with its reason.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-gongwen-word-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-gongwen-word-check-flow-v5-light.svg" width="100%" alt="dsh-gongwen-word-check structure: a vertical scope boundary. On the left, the five fields a register exposes (docNo, signedAt, docKind, recipient, title) and the seven rules mounted on them; docKind's value list is empty at the factory, so GW-003 reports itself in skipped. On the right, typeface, type size, margins and seal — visible only on the document itself, so outside the check. Below, the report: one warn at row 1 / column docNo and one skipped rule; an empty issue list is not all clear">
+</picture>
 
 ## Three-step setup
 
@@ -383,7 +388,7 @@ node samples/quickstart/run.mjs --json
 # => {"tool":"gongwen_word_check","issueCount":1,"summary":{"error":0,"warn":1,"info":0},"skippedCount":1}
 ```
 
-The sample input lives in `samples/quickstart/input/`, the expected output in `samples/quickstart/expected/result.json`, and a screenshot in `docs/assets/quickstart.png`. The README images are generated programmatically by [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Python + Pillow) and are safe to re-run: `python scripts/gen-readme-assets.py`; the older single-skin flow diagram and demo images stay in `docs/assets/` for external deep links, while the READMEs reference only the new light/dark pair.
+The sample input lives in `samples/quickstart/input/`, the expected output in `samples/quickstart/expected/result.json`, and a screenshot in `docs/assets/quickstart.png`. The README images are generated programmatically by [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (the hero with Python + Pillow, the structure figure as hand-written SVG) and are safe to re-run: `python scripts/gen-readme-assets.py`; the older single-skin flow diagram and demo images stay in `docs/assets/` for external deep links, while the READMEs reference the new hero and the light/dark structure pair.
 
 Topics: `deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `gongwen`, `word`
 
