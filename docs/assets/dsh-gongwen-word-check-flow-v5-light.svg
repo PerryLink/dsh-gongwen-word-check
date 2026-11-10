@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" role="img" aria-labelledby="title desc">
+<title id="title">dsh-gongwen-word-check — register-text scope boundary</title>
+<desc id="desc">A vertical scope boundary. In scope on the left: the register's five canonical fields (docNo, signedAt, docKind, recipient, title) and the seven rules that read them; docNo carries GW-001 and GW-006, title carries GW-005 and GW-007, and GW-003 is the factory-empty document-kind list, so it reports itself in skipped. Out of scope on the right: typeface, type size, margins and seal placement, which a register cannot show. Below: the report, one issue at row 1 column docNo and one skipped rule; empty issues is not all clear.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0.15" y2="1"><stop offset="0" stop-color="#f9f6fd"/><stop offset="1" stop-color="#e4eaf8"/></linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#4B67B4" stop-opacity="0.16"/><stop offset="1" stop-color="#4B67B4" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#241d38" flood-opacity="0.12"/></filter>
+</defs>
+<rect x="0" y="0" width="1100" height="660" rx="22" fill="url(#bg)"/>
+<circle cx="968" cy="74" r="270" fill="url(#glow)"/>
+<text x="44" y="58" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="30" font-weight="700">dsh-gongwen-word-check</text>
+<text x="44" y="86" fill="#4d5261" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="14">Seven rules read the text a register records. Layout is outside the boundary.</text>
+<rect x="796" y="34" width="260" height="28" rx="14" fill="#ece7f9"/>
+<text x="809" y="52.4" fill="#4B67B4" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">rules/gongwen-word-check.yaml · v2026.1</text>
+<text x="44" y="112" fill="#737a8c" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">IN · rows[] · issuer / year / checkedAt · JSON or YAML</text>
+<text x="1056" y="112" fill="#737a8c" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">OUT · issues[] + skipped[] · markdown + reportJson</text>
+<line x1="44" y1="126" x2="1056" y2="126" stroke="#e7e4f0" stroke-width="1"/>
+<rect x="44" y="150" width="544" height="390" rx="20" fill="#ffffff" stroke="#e6e2ef" stroke-width="1.2" filter="url(#soft)"/>
+<text x="64" y="181" fill="#4B67B4" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" font-weight="700" letter-spacing="1.1">IN SCOPE · WHAT THE REGISTER RECORDS</text>
+<text x="568" y="181" fill="#737a8c" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">5 fields · 7 rules</text>
+<rect x="60" y="196" width="512" height="32" rx="10" fill="#f5f2fb" stroke="#e7e4f0" stroke-width="1"/>
+<text x="74" y="216.5" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11.5" font-weight="700">rows[]</text>
+<text x="132" y="216.5" fill="#4d5261" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">issuer · year · checkedAt</text>
+<text x="558" y="216.5" fill="#737a8c" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">JSON | YAML</text>
+<rect x="60" y="242" width="512" height="50" rx="12" fill="#ffffff" stroke="#e7e4f0" stroke-width="1"/>
+<text x="74" y="263" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="14" font-weight="700">docNo</text>
+<text x="74" y="280" fill="#737a8c" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11">发文字号</text>
+<rect x="236" y="256" width="124" height="22" rx="11" fill="#fdf0e7" stroke="#f2d5bc" stroke-width="1"/>
+<circle cx="246" cy="267" r="2.6" fill="#b45309"/>
+<text x="254" y="269.4" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">GW-001</text>
+<text x="301" y="269.4" fill="#4d5261" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">· pattern</text>
+<rect x="366" y="256" width="118" height="22" rx="11" fill="#f5f2fb" stroke="#e7e4f0" stroke-width="1"/>
+<circle cx="376" cy="267" r="2.6" fill="#b45309"/>
+<text x="384" y="269.4" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">GW-006</text>
+<text x="431" y="269.4" fill="#4d5261" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">· unique</text>
+<rect x="60" y="300" width="512" height="50" rx="12" fill="#ffffff" stroke="#e7e4f0" stroke-width="1"/>
+<text x="74" y="321" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="14" font-weight="700">signedAt</text>
+<text x="74" y="338" fill="#737a8c" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11">成文日期</text>
+<rect x="236" y="314" width="106" height="22" rx="11" fill="#f5f2fb" stroke="#e7e4f0" stroke-width="1"/>
+<circle cx="246" cy="325" r="2.6" fill="#b45309"/>
+<text x="254" y="327.4" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">GW-002</text>
+<text x="301" y="327.4" fill="#4d5261" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">· date</text>
+<rect x="60" y="358" width="512" height="50" rx="12" fill="#ffffff" stroke="#e7e4f0" stroke-width="1"/>
+<text x="74" y="379" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="14" font-weight="700">docKind</text>
+<text x="74" y="396" fill="#737a8c" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11">文种</text>
+<rect x="236" y="372" width="106" height="22" rx="11" fill="#f5f2fb" stroke="#e7e4f0" stroke-width="1"/>
+<circle cx="246" cy="383" r="2.6" fill="#4B67B4"/>
+<text x="254" y="385.4" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">GW-003</text>
+<text x="301" y="385.4" fill="#4d5261" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">· enum</text>
+<rect x="348" y="373" width="56" height="20" rx="10" fill="#ece7f9" stroke-dasharray="3 2"/>
+<text x="376" y="387" fill="#4B67B4" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="middle">skipped</text>
+<rect x="60" y="416" width="512" height="50" rx="12" fill="#ffffff" stroke="#e7e4f0" stroke-width="1"/>
+<text x="74" y="437" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="14" font-weight="700">recipient</text>
+<text x="74" y="454" fill="#737a8c" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11">主送机关</text>
+<rect x="236" y="430" width="130" height="22" rx="11" fill="#f5f2fb" stroke="#e7e4f0" stroke-width="1"/>
+<circle cx="246" cy="441" r="2.6" fill="#b45309"/>
+<text x="254" y="443.4" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">GW-004</text>
+<text x="301" y="443.4" fill="#4d5261" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">· presence</text>
+<rect x="60" y="474" width="512" height="50" rx="12" fill="#ffffff" stroke="#e7e4f0" stroke-width="1"/>
+<text x="74" y="495" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="14" font-weight="700">title</text>
+<text x="74" y="512" fill="#737a8c" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11">标题</text>
+<rect x="236" y="488" width="118" height="22" rx="11" fill="#f5f2fb" stroke="#e7e4f0" stroke-width="1"/>
+<circle cx="246" cy="499" r="2.6" fill="#b45309"/>
+<text x="254" y="501.4" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">GW-005</text>
+<text x="301" y="501.4" fill="#4d5261" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">· length</text>
+<rect x="360" y="488" width="148" height="22" rx="11" fill="#f5f2fb" stroke="#e7e4f0" stroke-width="1"/>
+<circle cx="370" cy="499" r="2.6" fill="#b45309"/>
+<text x="378" y="501.4" fill="#141419" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">GW-007</text>
+<text x="425" y="501.4" fill="#4d5261" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">· containsAny</text>
+<line x1="602" y1="150" x2="602" y2="540" stroke="#cfc8e2" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.9"/>
+<text x="602" y="345" fill="#737a8c" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="middle" letter-spacing="1.4" transform="rotate(-90 602 345)">SCOPE BOUNDARY</text>
+<rect x="616" y="150" width="440" height="390" rx="20" fill="#f4f2f8" stroke="#cfc8e2" stroke-width="1.2"/>
+<text x="636" y="181" fill="#7c8194" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" font-weight="700" letter-spacing="1.1">OUT OF SCOPE · DOCUMENT LAYOUT</text>
+<text x="1040" y="181" fill="#7c8194" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">no field in rows[]</text>
+<rect x="632" y="200" width="408" height="64" rx="12" fill="#ffffff" stroke="#cfc8e2" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="646" y="214" width="36" height="36" rx="10" fill="#f5f2fb" stroke="#cfc8e2" stroke-width="1"/>
+<text x="664" y="238" fill="#7c8194" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="15" text-anchor="middle" font-weight="700">Aa</text>
+<text x="694" y="225" fill="#7c8194" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="13.5" font-weight="700">typeface · 字体</text>
+<text x="694" y="245" fill="#737a8c" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">标题小标宋 · §7.3.1</text>
+<text x="1024" y="225" fill="#7c8194" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">not checked</text>
+<rect x="632" y="274" width="408" height="64" rx="12" fill="#ffffff" stroke="#cfc8e2" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="646" y="288" width="36" height="36" rx="10" fill="#f5f2fb" stroke="#cfc8e2" stroke-width="1"/>
+<text x="664" y="312" fill="#7c8194" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="15" text-anchor="middle" font-weight="700">12</text>
+<text x="694" y="299" fill="#7c8194" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="13.5" font-weight="700">type size · 字号</text>
+<text x="694" y="319" fill="#737a8c" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">正文 3 号仿宋 · §5.2.2</text>
+<text x="1024" y="299" fill="#7c8194" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">not checked</text>
+<rect x="632" y="348" width="408" height="64" rx="12" fill="#ffffff" stroke="#cfc8e2" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="646" y="362" width="36" height="36" rx="10" fill="#f5f2fb" stroke="#cfc8e2" stroke-width="1"/>
+<text x="664" y="386" fill="#7c8194" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="15" text-anchor="middle" font-weight="700">▭</text>
+<text x="694" y="373" fill="#7c8194" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="13.5" font-weight="700">margins · 页边距</text>
+<text x="694" y="393" fill="#737a8c" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">156mm × 225mm · §5</text>
+<text x="1024" y="373" fill="#7c8194" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">not checked</text>
+<rect x="632" y="422" width="408" height="64" rx="12" fill="#ffffff" stroke="#cfc8e2" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="646" y="436" width="36" height="36" rx="10" fill="#f5f2fb" stroke="#cfc8e2" stroke-width="1"/>
+<text x="664" y="460" fill="#7c8194" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="15" text-anchor="middle" font-weight="700">◎</text>
+<text x="694" y="447" fill="#7c8194" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="13.5" font-weight="700">seal · 印章</text>
+<text x="694" y="467" fill="#737a8c" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">印章位置 · §7.3.5.1</text>
+<text x="1024" y="447" fill="#7c8194" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">not checked</text>
+<text x="636" y="508" fill="#7c8194" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11">A register records text; these four live on the document itself.</text>
+<text x="636" y="526" fill="#737a8c" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11">The check never claims them, and the report never implies them.</text>
+<rect x="44" y="552" width="640" height="84" rx="16" fill="#ffffff" stroke="#e6e2ef" stroke-width="1.2" filter="url(#soft)"/>
+<text x="64" y="574" fill="#4B67B4" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" font-weight="700">OUT · issues[]</text>
+<rect x="582" y="560" width="52" height="21" rx="10.5" fill="#fdf0e7"/><text x="608" y="574.24" fill="#b45309" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="middle">1 warn</text>
+<text x="64" y="596" fill="#4d5261" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11.5">row 1 · column docNo</text>
+<text x="64" y="620" fill="#141419" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="13">某政发[2026]15号</text>
+<text x="238" y="620" fill="#737a8c" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="13">→</text>
+<text x="264" y="620" fill="#4B67B4" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="13" font-weight="700">某政发〔2026〕15号</text>
+<rect x="700" y="552" width="356" height="84" rx="16" fill="#ffffff" stroke="#e6e2ef" stroke-width="1.2" filter="url(#soft)"/>
+<text x="720" y="574" fill="#b45309" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" font-weight="700">skipped[] · 1</text>
+<text x="1036" y="574" fill="#737a8c" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">GW-003</text>
+<text x="720" y="598" fill="#4d5261" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11.5">values: []</text>
+<text x="812" y="598" fill="#141419" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11.5">→ document-kind list unset</text>
+<text x="720" y="622" fill="#b45309" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="12" font-weight="700">empty issues ≠ all clear</text>
+<text x="550" y="646" fill="#737a8c" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" text-anchor="middle">wording guard · no compliance verdict · the verdict stays with the reviewer</text>
+</svg>
