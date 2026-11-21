@@ -60,6 +60,11 @@ columna del registro   clave     qué pregunta la comprobación
   <img src="docs/assets/dsh-gongwen-word-check-flow-v5-light.svg" width="100%" alt="Estructura de dsh-gongwen-word-check: una frontera vertical de alcance. A la izquierda, los cinco campos que expone el registro (docNo, signedAt, docKind, recipient, title) y las siete reglas montadas sobre ellos; la lista de valores de docKind viene vacía de fábrica, por lo que GW-003 se declara en skipped. A la derecha, tipografía, cuerpo, márgenes y sello: solo visibles en el documento, quedan fuera de la comprobación. Abajo, el informe: un warn en la fila 1 / columna docNo y una regla omitida; una lista de incidencias vacía no significa que todo esté correcto">
 </picture>
 
+![dsh-gongwen-word-check: ejecución real de terminal](docs/assets/dsh-gongwen-word-check-demo.gif)
+
+*Repetición animada de una ejecución real registrada en este repositorio.*
+
+
 ## Instalación en tres pasos
 
 1. **Instalar** (elija un canal):

@@ -141,6 +141,10 @@ Every PerryLink plugin is listed in the built-in DSH Desktop market: **Market â†
 
 ### Examples
 
+![dsh-gongwen-word-check: real terminal run](docs/assets/dsh-gongwen-word-check-demo.gif)
+
+*Animated replay of a real run recorded in this repository.*
+
 These are the plugin's real entry points; install once, then call one. The first case is the detailed walkthrough, the rest are short cases.
 
 **Detailed example** â€” tool `gongwen_word_check`, input:

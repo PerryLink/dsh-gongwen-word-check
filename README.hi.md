@@ -60,6 +60,11 @@ dsh plugin --profile <name> add dsh-gongwen-word-check
   <img src="docs/assets/dsh-gongwen-word-check-flow-v5-light.svg" width="100%" alt="dsh-gongwen-word-check संरचना: एक ऊर्ध्वाधर दायरा-सीमा। बाईं ओर रजिस्टर के पाँच फ़ील्ड (docNo, signedAt, docKind, recipient, title) और उन पर लगे सात नियम; docKind की मान-सूची फ़ैक्टरी में खाली है, इसलिए GW-003 skipped में स्वयं को दर्ज करता है। दाईं ओर टाइपफ़ेस, आकार, हाशिये और मुहर — जो केवल मूल दस्तावेज़ पर दिखते हैं, अतः जाँच से बाहर। नीचे रिपोर्ट: पंक्ति 1 / कॉलम docNo पर एक warn और एक skipped नियम; खाली issues का अर्थ 'सब ठीक' नहीं है">
 </picture>
 
+![dsh-gongwen-word-check का असली टर्मिनल रन](docs/assets/dsh-gongwen-word-check-demo.gif)
+
+*इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
+
+
 ## तीन चरणों में शुरुआत
 
 1. **इंस्टॉल करें** (कोई एक माध्यम चुनें):
