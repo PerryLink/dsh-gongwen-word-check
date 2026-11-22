@@ -7,6 +7,8 @@
 
 # dsh-gongwen-word-check
 
+Current version `0.2.15`.
+
 **Check a document register item by item — you get a list of which row, which column, and what to fix; the verdict stays with the reviewer.**
 
 A data-only checker plugin for DeepSeek Harness: it reads one official-document register (one row per issued document), applies the versioned rule pack it ships (GW-001..GW-007) to the text the register records, and lists only the differences it can point to inside the material — never a compliance verdict, never a liability finding.
