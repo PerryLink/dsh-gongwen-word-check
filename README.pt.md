@@ -11,6 +11,8 @@
 
 Plugin verificador orientado a dados para o DeepSeek Harness: lê um registro de documentos oficiais (uma linha por documento emitido), aplica o pacote de regras versionado que acompanha o pacote (GW-001..GW-007) ao texto que o registro anota e lista apenas as divergências que consegue apontar dentro do material — nunca um parecer de conformidade, nunca uma atribuição de responsabilidade.
 
+Última verificação: DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
+
 [Instalar](#instalação-em-três-passos) · [Configuração](#configuração) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
@@ -63,7 +65,6 @@ coluna do registro   chave      o que a verificação pergunta
 ![dsh-gongwen-word-check: execução real de terminal](docs/assets/dsh-gongwen-word-check-demo.gif)
 
 *Repetição animada de uma execução real registrada neste repositório.*
-
 
 ## Instalação em três passos
 

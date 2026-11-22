@@ -11,6 +11,8 @@
 
 A data-only checker plugin for DeepSeek Harness: it reads one official-document register (one row per issued document), applies the versioned rule pack it ships (GW-001..GW-007) to the text the register records, and lists only the differences it can point to inside the material — never a compliance verdict, never a liability finding.
 
+Last verified on DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
+
 [Install](#three-step-setup) · [Configuration](#configuration) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
